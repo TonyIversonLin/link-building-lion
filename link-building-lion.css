@@ -13,6 +13,9 @@ nav.nav-horizontal {
 	position: absolute;
 	width: 100%;
 	z-index: 1;
+	animation: fade-in-down 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
 }nav.nav-horizontal ul {
 	list-style: none;
 }nav.nav-horizontal ul li {
@@ -67,6 +70,17 @@ nav.nav-horizontal ul li a {
                      rgba(20,20,20, 0.5)),
                      url('./images/Nz5a9_L4.png');
 	background-size: cover;
+}.container.landing:after {
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 2rem;
+	border-color: rgba(255, 255, 255, 0.08) transparent transparent transparent;
+	position: absolute;
+  left: 50%;
+  top: 96%;	
+  transform: translateX(-50%);
 }
 
 .container.landing .row {
@@ -94,12 +108,18 @@ nav.nav-horizontal ul li a {
 	color: rgba(255,255,255,0.7);
 	font-weight: 100;
 	text-shadow: 6px 5px 10px black;
+	animation: fade-in-right 1s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
 }.landing img {
 	width: 35%;
 	margin: 0 auto;
 	float: none;
 	min-width: 250px;
 	opacity: 0.9;
+	animation: fade-in-down-image 1s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
 }.landing h1{
 	font-family: 'Poppins', sans-serif;
 	font-weight: bold;
@@ -107,6 +127,9 @@ nav.nav-horizontal ul li a {
 	color: white;
 	font-size: 500%;
 	margin-bottom: 2rem;
+	animation: fade-in-left 1s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
 }.landing button {
 	position: absolute;
 	padding: 1rem 3rem;
@@ -122,7 +145,9 @@ nav.nav-horizontal ul li a {
   -webkit-text-fill-color: transparent;
   color: white;
 
-	transition: font-size 0.3s;
+	transition: font-size 0.5s;
+	transition-timing-function: ease-in-out;
+	-webkit-transition-timing-function: ease-in-out;
 
 	// border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%);
 	// border-image-slice: 50;
@@ -131,5 +156,25 @@ nav.nav-horizontal ul li a {
 	-webkit-background-clip: padding-box;
   -webkit-text-fill-color: initial;
   font-size: 100%;
+}
+
+@keyframes fade-in-down {
+	from {top: -30px; opacity:0}
+	to {top: 0; opacity:1}
+}
+
+@keyframes fade-in-down-image {
+	from {transform: translateY(-23%);opacity: 0}
+	to {transform: translateY(0);opacity: 0.9}
+}
+
+@keyframes fade-in-left {
+	from {transform: translateX(-23%); opacity: 0}
+	to {transform: translateX(0); opacity: 1}
+}
+
+@keyframes fade-in-right {
+	from {transform: translateX(23%); opacity: 0}
+	to {transform: translateX(0); opacity: 1}
 }
 
