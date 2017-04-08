@@ -199,7 +199,11 @@ nav.nav-horizontal ul li a {
 	padding: 0 5rem;
 }.container.guide div div.col-sm-6 {
 	margin: 2rem 0;
-} 
+}.container.guide i {
+	color: #3AA9D5;
+}.container.guide h4 {
+	font-weight: bold;
+}
 
 .container.tutorial {
 	width: 100%;
