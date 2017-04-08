@@ -190,16 +190,23 @@ nav.nav-horizontal ul li a {
 
 .container.guide {
 	color: black;
-	margin-top: 12rem;
-	margin-bottom: 12rem;
+	margin-top: 10rem;
+	margin-bottom: 10rem;
 	width: 85%;
 	font-size: 115%;
 	font-weight: lighter;
-}.container.guide div div {
-	padding: 0 5rem;
-}.container.guide div div.col-sm-6 {
-	margin: 2rem 0;
-}.container.guide i {
+}.container.guide div > div {
+	min-height: 22rem;
+	padding: 0;
+	margin: 0;
+}.container.guide div > div > div {
+	margin: 2rem 2rem;
+	padding: 2rem 1rem;
+}.container.guide div > div > div:hover {
+	box-shadow: 0px 0px 10px 0px #2392c7;
+}
+
+.container.guide i {
 	color: #3AA9D5;
 }.container.guide h4 {
 	font-weight: bold;
