@@ -7,6 +7,24 @@ html,body {
 }.container, .row, ul {
 	margin: 0;
 	padding: 0;
+}.container {
+	width: 100%;
+}
+
+
+.center {
+	margin: 0 auto;
+	text-align: center;
+	float: none;
+}
+
+.col-centered{
+	position: relative;
+  float: none;
+  margin: 0 auto;
+	top: 43%;
+	transform: translateY(-50%);
+	text-align: center;
 }
 
 nav.nav-horizontal {
@@ -21,7 +39,7 @@ nav.nav-horizontal {
 }nav.nav-horizontal ul li {
 	display: inline-block;
 	float: right;
-	margin: 2rem;
+	margin: 2.5rem 2rem;
 	font-weight: bolder;
 	font-size: 1.6rem;
 }nav.nav-horizontal ul li:nth-of-type(2) {
@@ -90,25 +108,12 @@ nav.nav-horizontal ul li a {
 	height: 100%;
 }
 
-.center {
-	margin: 0 auto;
-	text-align: center;
-	float: none;
-}
-
-.col-centered{
-	position: relative;
-  float: none;
-  margin: 0 auto;
-	top: 43%;
-	transform: translateY(-50%);
-	text-align: center;
-}.landing p {	
+.landing p {	
 	font-size: 1.7rem;
 	color: rgba(255,255,255,0.7);
 	font-weight: 100;
 	text-shadow: 6px 5px 10px black;
-	animation: fade-in-right 1s;
+	animation: fade-in-top 1s;
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: forwards;
 }.landing img {
@@ -117,7 +122,7 @@ nav.nav-horizontal ul li a {
 	float: none;
 	min-width: 250px;
 	opacity: 0.9;
-	animation: fade-in-down-image 1s;
+	animation: fade-in-left-image 1s;
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: forwards;
 }.landing h1{
@@ -127,7 +132,7 @@ nav.nav-horizontal ul li a {
 	color: white;
 	font-size: 500%;
 	margin-bottom: 2rem;
-	animation: fade-in-left 1s;
+	animation: fade-in-right 1s;
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: forwards;
 }.landing button {
@@ -163,18 +168,56 @@ nav.nav-horizontal ul li a {
 	to {top: 0; opacity:1}
 }
 
-@keyframes fade-in-down-image {
-	from {transform: translateY(-23%);opacity: 0}
+@keyframes fade-in-left-image {
+	from {transform: translateX(-50%);opacity: 0}
 	to {transform: translateY(0);opacity: 0.9}
 }
 
 @keyframes fade-in-left {
-	from {transform: translateX(-23%); opacity: 0}
+	from {transform: translateX(-60%); opacity: 0}
 	to {transform: translateX(0); opacity: 1}
 }
 
 @keyframes fade-in-right {
-	from {transform: translateX(23%); opacity: 0}
+	from {transform: translateX(30%); opacity: 0}
 	to {transform: translateX(0); opacity: 1}
+}
+
+@keyframes fade-in-top {
+	from {transform: translateY(50%); opacity: 0}
+	to {transform: translateY(0); opacity: 1}
+}
+
+.container.guide {
+	color: black;
+	margin-top: 12rem;
+	margin-bottom: 12rem;
+	width: 85%;
+	font-size: 115%;
+	font-weight: lighter;
+}.container.guide div div {
+	padding: 0 5rem;
+}.container.guide div div.col-sm-6 {
+	margin: 2rem 0;
+} 
+
+.container.tutorial {
+	width: 100%;
+	height: 70%;
+	min-height: 600px;
+	background: url('./images/tutorial.jpg');
+	background-size: cover;
+	background-position: center 33%;
+}.container.tutorial .iframe-wrapper {
+	position:relative; 
+	width:100%; 
+	padding-bottom: 56.25%;
+	//height:56.25%;
+}.container.tutorial iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	transform: translate(-50%, -30%);
 }
 
