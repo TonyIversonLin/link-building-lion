@@ -192,9 +192,11 @@ nav.nav-horizontal ul li a {
 }
 
 .container.guide {
+	clear: both;
+	position: relative;
 	color: black;
-	margin-top: 8rem;
-	margin-bottom: 8rem;
+	margin-top: 6rem;
+	margin-bottom: 6rem;
 	width: 85%;
 	font-size: 115%;
 	font-weight: lighter;
@@ -261,33 +263,73 @@ nav.nav-horizontal ul li a {
 
 .container.about {
 	width: 100%;
-	height: 500px;
 	//border: 2px solid black;
+}.container.about h1{
+	text-align: center;
+}.container.about p {
+	margin: 6rem 8rem;
+	font-size: 130%;
+	line-height: 2.5rem;
+}.container.about div > div {
+	//float: left;
 }.container.about .row{
 	height: 100%;
 }.container.about img {
 	width: 50%;
 	position: absolute;
 	top: 50%;
+	box-shadow: 2px 2px 20px 0px #484646;
 }.container.about .showcasing {
 	position: relative;
 	perspective: 500px;
-	height: 100%;
+	//height: 100%;
+	min-height: 50vh;
 }#img1{
 	z-index: 4;
-	transform: rotateY( -15deg ) rotateX(2deg) translateY(-50%);
-	box-shadow: 0 0 30px #484646;
+	//transform: rotateY( -15deg ) rotateX(3deg) translateY(-50%);
+	opacity: 0;
+	animation: fade-img-1 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+	animation-delay: 2.1s;
 }#img2{
 	z-index: 3;
-	transform: rotateY( -15deg ) rotateX(2deg) translateX(6rem) translateY(-50%) scale(1.1,1.1);
-	box-shadow: 0 0 30px #484646;
+	opacity: 0;
+	//transform: rotateY( -15deg ) rotateX(3deg) translateX(15%) translateY(-50%) scale(1.1,1.1);
+	animation: fade-img-2 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+	animation-delay: 1.4s;
 }#img3{
 	z-index: 2;
-	transform: rotateY( -15deg ) rotateX(2deg) translateX(12rem) translateY(-49%) scale(1.2,1.2);
-	box-shadow: 0 0 30px #484646;
+	opacity: 0;
+	//transform: rotateY( -15deg ) rotateX(3deg) translateX(30%) translateY(-49%) scale(1.2,1.2);
+	animation: fade-img-3 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0.7s;
 }#img4{
 	z-index: 1;
-	transform: rotateY( -15deg ) rotateX(2deg) translateX(18rem) translateY(-50%) scale(1.2,1.2);
-	box-shadow: 0 0 30px #484646;
+	opacity: 0;
+	//transform: rotateY( -15deg ) rotateX(3deg) translateX(45%) translateY(-50%) scale(1.21,1.21);
+	animation: fade-img-4 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
 }
 
+@keyframes fade-img-1 {
+	from {opacity: 0; transform: rotateY( -15deg ) rotateX(3deg) translateY(-50%) translateX(10%);}
+	to {opacity: 1; transform: rotateY( -15deg ) rotateX(3deg) translateY(-50%) translateX(0%);}
+}
+@keyframes fade-img-2 {
+	from {opacity: 0; transform: rotateY( -15deg ) rotateX(3deg) translateY(-50%) scale(1.1,1.1) translateX(25%);}
+	to {opacity: 1; transform: rotateY( -15deg ) rotateX(3deg) translateY(-50%) scale(1.1,1.1) translateX(15%);}
+}
+@keyframes fade-img-3 {
+	from {opacity: 0; transform: rotateY( -15deg ) rotateX(3deg) translateY(-49%) scale(1.2,1.2) translateX(40%);}
+	to {opacity: 1; transform:  rotateY( -15deg ) rotateX(3deg) translateY(-49%) scale(1.2,1.2) translateX(30%);}
+}
+@keyframes fade-img-4 {
+	from {opacity: 0; transform: rotateY( -15deg ) rotateX(3deg) translateY(-50%) scale(1.21,1.21) translateX(55%);}
+	to {opacity: 1; transform: rotateY( -15deg ) rotateX(3deg) translateY(-50%) scale(1.21,1.21) translateX(45%);}
+}
