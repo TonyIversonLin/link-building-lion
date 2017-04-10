@@ -14,9 +14,9 @@
 		<ul>
 			<li id='logo' class="nav-link">LinkBuilding <img src="./images/logo-white.png"></li>
 			<li class="nav-link"><a>CONTACT</a></li>
-			<li class="nav-link"><a>TUTORIAL</a></li>
-			<li class="nav-link"><a>GUIDE</a></li>
-			<li class="nav-link"><a>ABOUT</a></li>
+			<li class="nav-link"><a href='#tutorial'>TUTORIAL</a></li>
+			<li class="nav-link"><a href='#guide'>GUIDE</a></li>
+			<li class="nav-link"><a href='#about'>ABOUT</a></li>
 			<li class="nav-link"><a>HOME</a>
 		</ul>
 	</nav>
@@ -37,7 +37,7 @@
 		</div>	
 	</div>
 
-	<div class='container about'>
+	<div class='container about' id='about'>
 		<h1>About</h1>
 		<div class="row">
 				<div class="col-md-6 col-sm-12 col-12">
@@ -61,46 +61,51 @@
 		</div>	
 	</div>
 
-	<div class="container guide center">
-		<div class="row">
+	<div id="guide-wrapper">
+		<div class="container guide center" id='guide'>
+			<h1>Guide</h1>
+			<br>
+			<div class="row">
 
-			<div class="col-lg-3 col-sm-6 col-12">
-				<div>
-					<i class="fa fa-download fa-4x" aria-hidden="true"></i><br><br>
-					<h4>Download</h4>
-					Download and install the app in your PC
+				<div class="col-lg-3 col-sm-6 col-12">
+					<div>
+						<i class="fa fa-download fa-4x" aria-hidden="true"></i><br><br>
+						<h4>Download</h4>
+						Download and install the app in your PC
+					</div>
 				</div>
-			</div>
 
-			<div class="col-lg-3 col-sm-6 col-12">
-				<div>
-					<i class="fa fa-address-card-o fa-4x" aria-hidden="true"></i><br><br>
-					<h4>Profile</h4>
-					Launch app, fill out your info in the personal profile
+				<div class="col-lg-3 col-sm-6 col-12">
+					<div>
+						<i class="fa fa-address-card-o fa-4x" aria-hidden="true"></i><br><br>
+						<h4>Profile</h4>
+						Launch app, fill out your info in the personal profile
+					</div>
 				</div>
-			</div>
 
-			<div class="col-lg-3 col-sm-6 col-12">
-				<div>
-					<i class="fa fa-key fa-4x" aria-hidden="true"></i><br><br>
-					<h4>API Key</h4>
-					Create Account and activate your service on 2Capture,
-					then get your API key
+				<div class="col-lg-3 col-sm-6 col-12">
+					<div>
+						<i class="fa fa-key fa-4x" aria-hidden="true"></i><br><br>
+						<h4>API Key</h4>
+						Create Account and activate your service on 2Capture,
+						then get your API key
+					</div>
 				</div>
-			</div>
 
-			<div class="col-lg-3 col-sm-6 col-12">
-				<div>
-					<i class="fa fa-link fa-4x" aria-hidden="true"></i><br><br>
-					<h4>Linking</h4>
-					Fill in your API key in profile and start linking
-					in your subscription page.
+				<div class="col-lg-3 col-sm-6 col-12">
+					<div>
+						<i class="fa fa-link fa-4x" aria-hidden="true"></i><br><br>
+						<h4>Linking</h4>
+						Fill in your API key in profile and start linking
+						in your subscription page.
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="container tutorial">
+	<div class="container tutorial" id='tutorial'>
+		<div><h1>Tutorial</h1></div>
 		<div class='row'>
 			<div class="col-lg-7 col-sm-10 center">
 				<div class='iframe-wrapper'>
@@ -109,10 +114,13 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="container contact">
+		<h1>Contact</h1>
+	</div>
 </body>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	
 </html>
