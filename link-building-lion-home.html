@@ -13,10 +13,10 @@
 	<nav class="nav-horizontal">
 		<ul>
 			<li id='logo' class="nav-link">LinkBuilding <img src="./images/logo-white.png"></li>
-			<li class="nav-link"><a>CONTACT</a></li>
-			<li class="nav-link"><a href='#tutorial'>TUTORIAL</a></li>
-			<li class="nav-link"><a href='#guide'>GUIDE</a></li>
-			<li class="nav-link"><a href='#about'>ABOUT</a></li>
+			<li class="nav-link"><a data-target='#contact' onclick="jump(event)">CONTACT</a></li>
+			<li class="nav-link"><a data-target='#tutorial' onclick="jump(event)">TUTORIAL</a></li>
+			<li class="nav-link"><a data-target='#guide' onclick="jump(event)">GUIDE</a></li>
+			<li class="nav-link"><a data-target='#about' onclick="jump(event)">ABOUT</a></li>
 			<li class="nav-link"><a>HOME</a>
 		</ul>
 	</nav>
@@ -34,6 +34,9 @@
 					<button>ORDER NOW</button>
 				</p>
 			</div>
+		</div>
+		<div>
+			<a href="#about"><i class="fa fa-angle-down"></i></a>
 		</div>	
 	</div>
 
@@ -61,8 +64,8 @@
 		</div>	
 	</div>
 
-	<div id="guide-wrapper">
-		<div class="container guide center" id='guide'>
+	<div class="guide-wrapper" id='guide'>
+		<div class="container guide center">
 			<h1>Guide</h1>
 			<br>
 			<div class="row">
@@ -109,13 +112,13 @@
 		<div class='row'>
 			<div class="col-lg-7 col-sm-10 center">
 				<div class='iframe-wrapper'>
-					<iframe src="https://www.youtube.com/embed/q4ZzOiUUfzU" frameborder="0" allowfullscreen></iframe>
+					<iframe src="https://www.youtube.com/embed/TpDqwqg7QEE" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="container contact">
+	<div class="container contact" id="contact">
 		<h1>Contact</h1>
 		<div class="row row-centered">
 			<div class='col-lg-3 col-sm-5 col-xs-11'>
@@ -162,11 +165,33 @@
 	</div>
 
 	<footer>
-		<h5>&copy; 2017 Power by <a>Local Interactive</a></h5>
+		<h5>&copy; 2017 Power by <a>Local Interactive</a>, All Rights Reserve</h5>
 	</footer>
-</body>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+	<script type="text/javascript">
+		let body = document.body;
+		function smoothScroll(to, duration) {
+			if(duration <= 0) return;
+			let difference = to.offsetTop - body.scrollTop;
+			console.log('difference', difference);
+			let step = difference / duration * 10;
+
+			setTimeout(() => {
+				body.scrollTop = body.scrollTop + step;
+				if(body.scrollTop === to.offsetTop) return;
+				smoothScroll(to, duration - 10);
+			}, 10)
+		}
+
+		function jump(event){
+			let destinationID = event.target.dataset.target;
+			let destinationElement = document.querySelector(destinationID);
+			smoothScroll(destinationElement, 300);
+		}
+
+
+	</script>
+</body>
 </html>

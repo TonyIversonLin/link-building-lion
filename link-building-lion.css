@@ -4,6 +4,10 @@ html,body {
 	box-sizing: border-box;
 	font-family: 'Roboto', sans-serif;
 	position: relative;
+	background-color: #1C1C1C;
+} a {
+	cursor: pointer;
+	color: #00C6FB;
 }.container, .row, ul {
 	margin: 0;
 	padding: 0;
@@ -166,6 +170,17 @@ nav.nav-horizontal ul li a {
   -webkit-text-fill-color: initial;
   font-size: 100%;
 }
+// .landing a {
+// 	background-color: blue;
+// 	text-decoration: none;
+// 	border-radius: 100px 100px 0 0;
+// 	display: block;
+// 	height: 40px;
+// 	margin: 0 auto;
+//   position: absolute;
+//   text-align: center;
+//   width: 80px;
+// }
 
 @keyframes fade-in-down {
 	from {top: -30px; opacity:0}
@@ -196,7 +211,7 @@ nav.nav-horizontal ul li a {
 
 
 
-#guide-wrapper {
+.guide-wrapper {
 	width: 100%;
 	position: relative;
 	background-image: linear-gradient(to top, #d8e7f9, #fff);
@@ -325,8 +340,9 @@ nav.nav-horizontal ul li a {
 .container.about {
 	width: 100%;
 	padding: 5rem 0;
-	background-color: #323B40;
-	//background: -webkit-linear-gradient(90deg, #1C1C1C 10%, #494949 90%); background: -moz-linear-gradient(90deg, #1C1C1C 10%, #494949 90%); background: linear-gradient(90deg, #1C1C1C 10%, #494949 90%);
+	//background-color: #323B40;
+	background: linear-gradient(90deg, #1C1C1C 10%, #494949 90%);
+	//background-color: #F8F8F8;
 	color: white;
 }.container.about h1{
 	text-align: center;
@@ -476,7 +492,6 @@ nav.nav-horizontal ul li a {
 
 footer {
 	text-align: center;
-	background-color: #1c1c1c;
 	color: white;
 	margin: 0;
 	padding: 0.8rem 0;
