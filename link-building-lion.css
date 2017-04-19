@@ -33,7 +33,7 @@ html,body {
 }
 
 nav.nav-horizontal {
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	z-index: 1;
 	animation: fade-in-down 1s;
@@ -49,9 +49,7 @@ nav.nav-horizontal {
 	font-size: 1.6rem;
 }nav.nav-horizontal ul li:nth-of-type(2) {
 	margin-right: 4rem;
-}
-
-nav.nav-horizontal ul li a {
+}nav.nav-horizontal ul li a {
 	position: relative;
 	cursor: pointer;
 	color: white;
@@ -83,6 +81,8 @@ nav.nav-horizontal ul li a {
 	font-size: 1.8rem;
 }nav.nav-horizontal ul #logo img{
 	width: 5rem;
+}nav.nav-horizontal {
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
 
@@ -571,4 +571,28 @@ footer {
 	padding: 0.8rem 0;
 }footer a {
 	font-style: italic;
+}
+
+#resume{
+	opacity: 0;
+	position: fixed;
+	bottom: 28px;
+	right: 5rem;
+	z-index: 10;
+	width: 5rem;
+	height: 5rem;
+	background-color: rgba(0, 0, 0,0.7);
+	text-align: center;
+	border-radius: 50%;
+	display: block;
+	padding-top: 1rem;
+}#resume.active {
+	animation: show-up 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes show-up {
+	from {opacity: 0}
+	to {opacity: 1}
 }

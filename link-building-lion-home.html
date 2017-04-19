@@ -21,7 +21,9 @@
 		</ul>
 	</nav>
 
-	<div class="container landing">
+	<a id="resume" data-target='#home' onclick="jump(event)"><i data-target='#home' class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></a>
+
+	<div class="container landing" id='home'>
 		<div class='row'>
 			<div class='col-sm-8 col-centered'>
 				<img src="./images/company-logo.png"><br>
@@ -173,7 +175,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
 	<script type="text/javascript">
 		let body = document.body;
-		let html = document.documentElement;
 		let height = window.innerHeight
 									|| document.documentElement.clientHeight
 									|| document.body.clientHeight;
@@ -199,6 +200,7 @@
 
 		function jump(event){
 			let destinationID = event.target.dataset.target;
+			console.log('target', destinationID);
 			let destinationElement = document.querySelector(destinationID);
 			smoothScroll(destinationElement, 300);
 		}
@@ -207,6 +209,7 @@
 		let aboutElement = document.querySelector('#about');
 		let tutorialElement = document.querySelector('#tutorial');
 		let contactElement = document.querySelector('#contact');
+		let resumeElement= document.querySelector('#resume');
 		let guideActivateLocation = guideElement.offsetTop - (3/5) * height;
 		let aboutActivateLocation = aboutElement.offsetTop - (3/5) * height;
 		let tutorialActivateLocation = tutorialElement.offsetTop - (3/5) * height;
@@ -214,14 +217,16 @@
 
 		function activateAnimation() {
 			let currentLocation = body.scrollTop;
+			if( activationStatus.about && currentLocation >= aboutActivateLocation) {
+				aboutElement.className += ' active';
+				activationStatus.about = false;
+				resumeElement.className += ' active';
+			}
 			if( activationStatus.guide && currentLocation >= guideActivateLocation) {
 				guideElement.className += ' active';
 				activationStatus.guide = false;
 			}
-			if( activationStatus.about && currentLocation >= aboutActivateLocation) {
-				aboutElement.className += ' active';
-				activationStatus.about = false;
-			}
+
 			if( activationStatus.tutorial && currentLocation >= tutorialActivateLocation) {
 				tutorialElement.className += ' active';
 				activationStatus.tutorial = false;
