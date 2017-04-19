@@ -258,12 +258,14 @@ nav.nav-horizontal ul li a {
 	color: #3AA9D5;
 }.container.guide h4 {
 	font-weight: bold;
-}#download, #api {
+}#download, #api, #profile, #linking {
+	opacity: 0;
+}#guide.active #download, #guide.active #api {
 	opacity: 0;
 	animation: slide-up 1s;
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: forwards;
-}#profile, #linking {
+}#guide.active #profile, #guide.active #linking {
 	opacity: 0;
 	animation: slide-down 1s;
 	animation-timing-function: ease-in-out;
@@ -324,13 +326,18 @@ nav.nav-horizontal ul li a {
 	padding-bottom: 56.25%;
 	margin-top: 3rem;
 	//height:56.25%;
-}.container.tutorial iframe {
+}#tutorial iframe {
+	opacity: 0;
+}#tutorial.active iframe {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	top: 50%;
-	transform: translate(-50%, -30%);
+	//transform: translate(-50%, -30%);
 	box-shadow: 0px 0px 20px 10px #2392c7;
+	animation: tutorial-fade-in 1s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
 }.container.tutorial > div:first-of-type {
 	position: absolute;
 	left: 50%;
@@ -357,6 +364,11 @@ nav.nav-horizontal ul li a {
 	position: absolute;
 	top:50%;
 	transform: translateX(22%);
+}
+
+@keyframes tutorial-fade-in {
+	from {opacity: 0; transform: translate(-50%, -20%);}
+	to {opacity: 1; transform: translate(-50%, -30%);}
 }
 
 
@@ -397,6 +409,11 @@ nav.nav-horizontal ul li a {
 	font-size: 130%;
 	line-height: 2.5rem;
 	font-weight: lighter;
+	opacity: 0;
+}#about.active p {
+	animation: about-p-fade-in 1s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
 }.container.about div > div {
 	//float: left;
 }.container.about .row{
@@ -411,7 +428,11 @@ nav.nav-horizontal ul li a {
 	perspective: 500px;
 	//height: 100%;
 	min-height: 50vh;
-}#img1{
+}#img1, #img2, #img3, #img4 {
+	opacity: 0;
+}
+
+#about.active #img1{
 	z-index: 40;
 	//transform: rotateY( -15deg ) rotateX(2deg) translateY(-50%);
 	opacity: 0;
@@ -419,7 +440,7 @@ nav.nav-horizontal ul li a {
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-in-out;
 	animation-delay: 2.1s;
-}#img2{
+}#about.active #img2{
 	z-index: 30;
 	opacity: 0;
 	//transform: rotateY( -15deg ) rotateX(3deg) translateX(15%) translateY(-50%) scale(1.1,1.1);
@@ -427,7 +448,7 @@ nav.nav-horizontal ul li a {
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-in-out;
 	animation-delay: 1.4s;
-}#img3{
+}#about.active #img3{
 	z-index: 20;
 	opacity: 0;
 	//transform: rotateY( -15deg ) rotateX(4deg) translateX(30%) translateY(-49%) scale(1.2,1.2);
@@ -435,7 +456,7 @@ nav.nav-horizontal ul li a {
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-in-out;
 	animation-delay: 0.7s;
-}#img4{
+}#about.active #img4{
 	z-index: 10;
 	opacity: 0;
 	//transform: rotateY( -15deg ) rotateX(5deg) translateX(45%) translateY(-50%) scale(1.21,1.21);
@@ -461,6 +482,10 @@ nav.nav-horizontal ul li a {
 	to {opacity: 1; transform: rotateY( -15deg ) rotateX(5deg) translateY(-50%) scale(1.21,1.21) translateX(45%);}
 }
 
+@keyframes about-p-fade-in {
+	from {opacity: 0; transform: translateX(-20%);}
+	to {opacity: 1; transform: translateX(0);}
+}
 
 
 
@@ -516,6 +541,27 @@ nav.nav-horizontal ul li a {
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 10px 4px rgba(102,175,233,.6);
 }.container.contact button {
 	margin-top: 1rem;
+}#contact #contact-info, #contact #contact-form{
+	opacity: 0;
+}#contact.active #contact-info {
+	animation: contact-info-fade-in 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+}#contact.active #contact-form {
+	animation: contact-form-fade-in 1s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+}
+
+
+@keyframes contact-info-fade-in {
+	from {opacity: 0; transform: translateX(-20%);}
+	to {opacity: 1; transform: translateX(0);}
+}
+
+@keyframes contact-form-fade-in {
+	from {opacity: 0; transform: translateX(20%);}
+	to {opacity: 1; transform: translateX(0);}
 }
 
 footer {

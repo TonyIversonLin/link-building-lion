@@ -8,7 +8,7 @@
 	<script src="https://use.fontawesome.com/821afdbeaf.js"></script>
 </head>
 
-<body>
+<body onscroll='activateAnimation()'>
 
 	<nav class="nav-horizontal">
 		<ul>
@@ -122,7 +122,7 @@
 	<div class="container contact" id="contact">
 		<h1>Contact</h1>
 		<div class="row row-centered">
-			<div class='col-lg-3 col-sm-5 col-xs-11'>
+			<div class='col-lg-3 col-sm-5 col-xs-11' id="contact-info">
 				<p>
 					Got a question? We would love to hear from you.<br>
 					Send us a message and we will response ASAP.
@@ -143,7 +143,7 @@
 				<p>+(01)123-456-7890</p>
 			</div>
 
-			<div class='col-lg-3 col-sm-5 col-xs-11'>
+			<div class='col-lg-3 col-sm-5 col-xs-11' id="contact-form">
 				<form>
 					<div class="form-group">
 						<label>Name</label>
@@ -173,6 +173,17 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
 	<script type="text/javascript">
 		let body = document.body;
+		let html = document.documentElement;
+		let height = window.innerHeight
+									|| document.documentElement.clientHeight
+									|| document.body.clientHeight;
+		let activationStatus = {
+			about: true,
+			guide: true,
+			tutorial: true,
+			contact: true
+		}
+
 		function smoothScroll(to, duration) {
 			if(duration <= 0) return;
 			let difference = to.offsetTop - body.scrollTop;
@@ -190,6 +201,36 @@
 			let destinationID = event.target.dataset.target;
 			let destinationElement = document.querySelector(destinationID);
 			smoothScroll(destinationElement, 300);
+		}
+
+		let guideElement = document.querySelector('#guide');
+		let aboutElement = document.querySelector('#about');
+		let tutorialElement = document.querySelector('#tutorial');
+		let contactElement = document.querySelector('#contact');
+		let guideActivateLocation = guideElement.offsetTop - (3/5) * height;
+		let aboutActivateLocation = aboutElement.offsetTop - (3/5) * height;
+		let tutorialActivateLocation = tutorialElement.offsetTop - (3/5) * height;
+		let contactActivateLocation = contactElement.offsetTop - (3/5) * height;
+
+		function activateAnimation() {
+			let currentLocation = body.scrollTop;
+			if( activationStatus.guide && currentLocation >= guideActivateLocation) {
+				guideElement.className += ' active';
+				activationStatus.guide = false;
+			}
+			if( activationStatus.about && currentLocation >= aboutActivateLocation) {
+				aboutElement.className += ' active';
+				activationStatus.about = false;
+			}
+			if( activationStatus.tutorial && currentLocation >= tutorialActivateLocation) {
+				tutorialElement.className += ' active';
+				activationStatus.tutorial = false;
+			}
+			if( activationStatus.contact && currentLocation >= contactActivateLocation) {
+				contactElement.className += ' active';
+				activationStatus.contact = false;
+				body.onscroll = null;
+			}
 		}
 
 
